@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'fourth_task/menu.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% block pagename %}
+    {{ title }}
+    {% endblock %}
+
+    {% block content %}
+    <button onclick="window.location.href='/django_sign_up/'">Регистрация</button>
+    {% endblock %}
+</body>
+</html>
