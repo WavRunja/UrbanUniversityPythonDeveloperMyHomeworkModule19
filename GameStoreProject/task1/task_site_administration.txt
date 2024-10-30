@@ -1,0 +1,46 @@
+Домашнее задание по теме "Сайт администрирования".
+
+Заполнение таблицы db.sqlite3 с помощью SQL-запросов на тестовом сайте https://sqliteonline.com/:
+
+INSERT INTO task1_buyer (name, balance, age) VALUES ('Ilya', 1500.05, 24);
+INSERT INTO task1_buyer (name, balance, age) VALUES ('Terminator2000', 42.15, 52);
+INSERT INTO task1_buyer (name, balance, age) VALUES ('Ubivator432', 0.5, 16);
+
+INSERT INTO task1_game (title, cost, size, description, age_limited) VALUES ('Cyberpunk 2077', 31.00, 46.2, 'Game of the year', True);
+INSERT INTO task1_game (title, cost, size, description, age_limited) VALUES ('Mario', 5.00, 0.5, 'Old Game', False);
+INSERT INTO task1_game (title, cost, size, description, age_limited) VALUES ('Hitman', 12.00, 36.6, 'Stealth action game', True);
+
+
+Добавление объектов в базе данных Django:
+python manage.py shell
+
+>>> from task1.models import Buyer, Game
+>>> buyer3 = Buyer.objects.create(name='User3new', balance=2520.50, age=71)  
+>>> game3 = Game.objects.create(title='Tetris', cost=1.99, size=0.2, description='Best game', age_limited=False)  
+
+Изменение атрибутов объекта
+
+>>> game3.title = 'Tetris 2077'
+>>> game3.description = 'Best game. Limited edition.'
+>>> game3.save()
+
+Получение всех объектов
+
+all_games = Game.objects.all()
+print(all_games)
+<QuerySet [<Game: Cyberpunk 2077>, <Game: Mario>, <Game: Hitman>, <Game: Soldier of Fortune II: Double Helix>, <Game: Need for Speed: Underground 2>, <Game: Doom II: Hell on Earth>, <Game: Tetris 2077>]>
+
+Удаление объекта из базы данных
+
+>>> buyer3.delete()
+(1, {'task1.Buyer': 1})
+
+Фильтрация объектов с помощью filter
+
+>>> age_limited_games = Game.objects.filter(age_limited=True)
+>>> print(age_limited_games)
+<QuerySet [<Game: Cyberpunk 2077>, <Game: Hitman>, <Game: Soldier of Fortune II: Double Helix>, <Game: Doom II: Hell on Earth>]>
+
+Выход
+
+>>> exit()
