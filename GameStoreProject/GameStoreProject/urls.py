@@ -22,4 +22,5 @@ urlpatterns = [
     # path task4, task5
     path('platform/', include('task1.urls')),
     path('', include('task1.urls')),
+    path('', include('blog.urls')),
 ]

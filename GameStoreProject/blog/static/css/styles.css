@@ -1,0 +1,26 @@
+.pagination {
+    # Выравнивание
+    display: flex;
+    # Промежутки между элементами
+    gap: 10px;
+    # Маркеры списка
+    list-style: none;
+}
+.pagination a {
+    # Внутренние отступы для ссылок
+    padding: 5px 10px;
+    # Граница вокруг ссылки
+    border: 1px solid #ddd;
+    # Цвет ссылки
+    color: #333;
+    # Подчеркивание
+    text-decoration: none;
+}
+.pagination a:hover {
+    # Светло-серый фон при наведении
+    background-color: #eee;
+}
+.pagination span {
+    # Полужирное начертание
+    font-weight: bold;
+}
