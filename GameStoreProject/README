@@ -1,0 +1,13 @@
+# Порядок установки базы данных
+1. Создать базу данных PostgreSQL:
+    ```sql
+    CREATE DATABASE my_django_db;
+    ```
+2. Выполнить миграции:
+    ```bash
+    python manage.py migrate
+    ```
+3. Загрузить данные:
+    ```bash
+    python manage.py loaddata db_data.json
+    ```
